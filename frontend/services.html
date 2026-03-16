@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services | BGS Infra — Civil Engineering Thane</title>
+  <meta name="description" content="BGS Infra offers structural strengthening, waterproofing, plastering and painting services for residential and commercial buildings in Thane and Mumbai.">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .service-detail {
+      padding: 96px 0;
+    }
+    .service-detail:nth-child(even) {
+      background: var(--bg-section);
+    }
+    .service-detail:nth-child(odd) {
+      background: var(--bg-white);
+    }
+    .service-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .service-detail-grid.reverse {
+      direction: rtl;
+    }
+    .service-detail-grid.reverse > * {
+      direction: ltr;
+    }
+    .service-img-box {
+      height: 420px;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-img-box::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,.15);
+    }
+    .si-1 { background: linear-gradient(135deg, #1B2A6B, #0F1A3E); }
+    .si-2 { background: linear-gradient(135deg, #2B9FD8, #1B6E9E); }
+    .si-3 { background: linear-gradient(135deg, #243580, #1B2A6B); }
+    .si-4 { background: linear-gradient(135deg, #1a3a70, #0d2050); }
+    .service-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .service-feature-icon {
+      width: 36px; height: 36px;
+      background: var(--sky-pale);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .service-feature h4 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .service-feature p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    @media (max-width: 768px) {
+      .service-detail-grid { grid-template-columns: 1fr; gap: 36px; }
+      .service-detail-grid.reverse { direction: ltr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo.png" alt="BGS Infra Logo" class="nav-logo-icon" style="object-fit:contain;">
+      <div class="nav-logo-text">
+        <span class="name">BGS Infra</span>
+        <span class="tagline">Structural Strengthening Specialist</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html" class="nav-cta">Contact Us</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <h1 data-aos="fade-up">Our Services</h1>
+    <p data-aos="fade-up" data-aos-delay="100">Comprehensive civil repair and maintenance solutions for every building need</p>
+    <div class="breadcrumb" data-aos="fade-up" data-aos-delay="200">
+      <a href="index.html">Home</a> <span>›</span> <span>Services</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES OVERVIEW -->
+<section class="section-pad" style="background:var(--bg-section);">
+  <div class="container">
+    <div class="text-center" data-aos="fade-up">
+      <span class="section-label">What We Offer</span>
+      <h2 class="section-title">Four Core Areas of Expertise</h2>
+      <p class="section-sub" style="margin:0 auto;">From structural repairs to surface finishing — we cover every aspect of building maintenance and restoration.</p>
+    </div>
+    <div class="services-grid" style="margin-top:52px;">
+      <a href="#structural" class="service-card" style="text-decoration:none;" data-aos="fade-up" data-aos-delay="0">
+        <div class="service-card-img s-bg-1">🏗️</div>
+        <div class="service-card-body">
+          <h3>Structural Strengthening</h3>
+          <p>Jacketing, fibre wrapping, grouting & polymer solutions to reinforce aging structures.</p>
+          <span class="service-card-link">View Details →</span>
+        </div>
+      </a>
+      <a href="#waterproofing" class="service-card" style="text-decoration:none;" data-aos="fade-up" data-aos-delay="80">
+        <div class="service-card-img s-bg-2">💧</div>
+        <div class="service-card-body">
+          <h3>Waterproofing</h3>
+          <p>Comprehensive waterproofing for terraces, basements and wet areas for lasting integrity.</p>
+          <span class="service-card-link">View Details →</span>
+        </div>
+      </a>
+      <a href="#plastering" class="service-card" style="text-decoration:none;" data-aos="fade-up" data-aos-delay="160">
+        <div class="service-card-img s-bg-3">🧱</div>
+        <div class="service-card-body">
+          <h3>Plastering</h3>
+          <p>Internal and external plastering with superior surface finish from start to fine completion.</p>
+          <span class="service-card-link">View Details →</span>
+        </div>
+      </a>
+      <a href="#painting" class="service-card" style="text-decoration:none;" data-aos="fade-up" data-aos-delay="240">
+        <div class="service-card-img s-bg-4">🎨</div>
+        <div class="service-card-body">
+          <h3>Painting</h3>
+          <p>Expert exterior and interior painting that transforms building facades with precision.</p>
+          <span class="service-card-link">View Details →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE 1: STRUCTURAL STRENGTHENING -->
+<section class="service-detail" id="structural">
+  <div class="container">
+    <div class="service-detail-grid">
+      <div data-aos="fade-right">
+        <div class="service-img-box si-1">🏗️</div>
+      </div>
+      <div data-aos="fade-left" data-aos-delay="100">
+        <span class="section-label">Service 01</span>
+        <h2 class="section-title">Structural Strengthening</h2>
+        <p style="color:var(--text-muted);font-size:16px;line-height:1.85;margin-bottom:28px;">
+          Aging buildings require expert reinforcement to restore structural integrity and extend service life. BGS Infra specialises in proven techniques that strengthen columns, beams, slabs, and foundations without disrupting occupants.
+        </p>
+        <div class="service-feature">
+          <div class="service-feature-icon">⚙️</div>
+          <div>
+            <h4>Jacketing</h4>
+            <p>Column and beam jacketing using concrete or steel to increase load-bearing capacity significantly.</p>
+          </div>
+        </div>
+        <div class="service-feature">
+          <div class="service-feature-icon">🔬</div>
+          <div>
+            <h4>Fibre Wrapping (FRP)</h4>
+            <p>Carbon and glass fibre reinforced polymer wrapping for non-invasive structural strengthening.</p>
+          </div>
+        </div>
+        <div class="service-feature">
+          <div class="service-feature-icon">💉</div>
+          <div>
+            <h4>Grouting & Injection</h4>
+            <p>Pressure grouting and crack injection to seal structural cracks and restore monolithic integrity.</p>
+          </div>
+        </div>
+        <div class="service-feature">
+          <div class="service-feature-icon">🧪</div>
+          <div>
+            <h4>Polymer Repair Mortars</h4>
+            <p>High-strength polymer-modified mortars for spalled concrete repair and surface restoration.</p>
+          </div>
+        </div>
+        <a href="contact.html" class="btn btn-dark" style="margin-top:20px;">Get a Free Assessment →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE 2: WATERPROOFING -->
+<section class="service-detail" id="waterproofing">
+  <div class="container">
+    <div class="service-detail-grid reverse">
+      <div data-aos="fade-left">
+        <div class="service-img-box si-2">💧</div>
+      </div>
+      <div data-aos="fade-right" data-aos-delay="100">
+        <span class="section-label">Service 02</span>
+        <h2 class="section-title">Waterproofing</h2>
+        <p style="color:var(--text-muted);font-size:16px;line-height:1.85;margin-bottom:28px;">
+          Water ingress is one of the leading causes of structural deterioration in Indian buildings. BGS Infra provides comprehensive waterproofing solutions designed to withstand the harshest monsoon conditions year after year.
+        </p>
+        <div class="service-feature">
+          <div class="service-feature-icon">🏠</div>
+          <div>
+            <h4>Terrace Waterproofing</h4>
+            <p>Crystalline, membrane, and brick bat coba systems for complete terrace protection.</p>
+          </div>
+        </div>
+        <div class="service-feature">
+          <div class="service-feature-icon">🏗️</div>
+          <div>
+            <h4>Basement Waterproofing</h4>
+            <p>Negative and positive side waterproofing for basements, underground tanks, and sumps.</p>
+          </div>
+        </div>
+        <div class="service-feature">
+          <div class="service-feature-icon">🚿</div>
+          <div>
+            <h4>Bathroom & Wet Area</h4>
+            <p>Complete waterproofing of bathrooms, kitchens, and utility areas before tiling.</p>
+          </div>
+        </div>
+        <div class="service-feature">
+          <div class="service-feature-icon">🧱</div>
+          <div>
+            <h4>External Wall Treatment</h4>
+            <p>Water-repellent coatings and sealants for external walls to prevent seepage and dampness.</p>
+          </div>
+        </div>
+        <a href="contact.html" class="btn btn-dark" style="margin-top:20px;">Get a Free Assessment →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE 3: PLASTERING -->
+<section class="service-detail" id="plastering">
+  <div class="container">
+    <div class="service-detail-grid">
+      <div data-aos="fade-right">
+        <div class="service-img-box si-3">🧱</div>
+      </div>
+      <div data-aos="fade-left" data-aos-delay="100">
+        <span class="section-label">Service 03</span>
+        <h2 class="section-title">Plastering</h2>
+        <p style="color:var(--text-muted);font-size:16px;line-height:1.85;margin-bottom:28px;">
+          Quality plastering is the foundation of any good finish. BGS Infra delivers smooth, durable plaster work for both internal and external surfaces — from initial surface preparation to final finishing coats.
+        </p>
+        <div class="service-feature">
+          <div class="service-feature-icon">🏢</div>
+          <div>
+            <h4>External Plastering</h4>
+            <p>Weather-resistant external plaster with proper bonding agents for long-lasting adhesion.</p>
+          </div>
+        </div>
+        <div class="service-feature">
+          <div class="service-feature-icon">🏠</div>
+          <div>
+            <h4>Internal Plastering</h4>
+            <p>Smooth internal plaster finish ready for paint — walls and ceilings to perfection.</p>
+          </div>
+        </div>
+        <div class="service-feature">
+          <div class="service-feature-icon">🔨</div>
+          <div>
+            <h4>Repair Plastering</h4>
+            <p>Targeted repair of damaged, cracked, or delaminated plaster sections on existing buildings.</p>
+          </div>
+        </div>
+        <div class="service-feature">
+          <div class="service-feature-icon">✨</div>
+          <div>
+            <h4>Duct & Shaft Plastering</h4>
+            <p>Precision plastering of internal ducts, shafts, and confined spaces requiring specialist access.</p>
+          </div>
+        </div>
+        <a href="contact.html" class="btn btn-dark" style="margin-top:20px;">Get a Free Assessment →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE 4: PAINTING -->
+<section class="service-detail" id="painting">
+  <div class="container">
+    <div class="service-detail-grid reverse">
+      <div data-aos="fade-left">
+        <div class="service-img-box si-4">🎨</div>
+      </div>
+      <div data-aos="fade-right" data-aos-delay="100">
+        <span class="section-label">Service 04</span>
+        <h2 class="section-title">Painting</h2>
+        <p style="color:var(--text-muted);font-size:16px;line-height:1.85;margin-bottom:28px;">
+          A fresh coat of paint transforms the appearance of any building and provides critical protection against weathering. BGS Infra uses premium quality paints and application techniques for results that last.
+        </p>
+        <div class="service-feature">
+          <div class="service-feature-icon">🏢</div>
+          <div>
+            <h4>External Painting</h4>
+            <p>Full exterior painting of building facades including surface preparation, putty, primer, and finish coats.</p>
+          </div>
+        </div>
+        <div class="service-feature">
+          <div class="service-feature-icon">🎭</div>
+          <div>
+            <h4>Internal Painting</h4>
+            <p>Clean, smooth internal wall and ceiling painting for common areas, corridors, and apartments.</p>
+          </div>
+        </div>
+        <div class="service-feature">
+          <div class="service-feature-icon">🛡️</div>
+          <div>
+            <h4>Protective Coatings</h4>
+            <p>Specialised anti-carbonation, anti-fungal, and UV-resistant coatings for extended building protection.</p>
+          </div>
+        </div>
+        <div class="service-feature">
+          <div class="service-feature-icon">🖌️</div>
+          <div>
+            <h4>Texture Finish</h4>
+            <p>Designer texture and decorative finishes for modern aesthetic appeal on exterior and interior walls.</p>
+          </div>
+        </div>
+        <a href="contact.html" class="btn btn-dark" style="margin-top:20px;">Get a Free Assessment →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-strip">
+  <div class="cta-strip-inner">
+    <div data-aos="fade-right">
+      <h2>Not Sure Which Service You Need?</h2>
+      <p>Our experts will assess your building and recommend the right solution.</p>
+    </div>
+    <a href="contact.html" class="btn btn-primary" data-aos="fade-left">Talk to an Expert →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-wrap">
+          <img src="assets/logo.png" alt="BGS Infra" style="width:38px;height:38px;object-fit:contain;">
+          <div class="nav-logo-text">
+            <span class="name">BGS Infra</span>
+            <span class="tagline">Structural Strengthening Specialist</span>
+          </div>
+        </div>
+        <p>15+ years of civil engineering excellence — Structural Strengthening, Waterproofing, Plastering & Painting across Thane and Mumbai.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social">f</a>
+          <a href="#" class="footer-social">in</a>
+          <a href="#" class="footer-social">yt</a>
+          <a href="#" class="footer-social">ig</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="projects.html">Completed Projects</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#structural">Structural Strengthening</a></li>
+          <li><a href="#waterproofing">Waterproofing</a></li>
+          <li><a href="#plastering">Plastering</a></li>
+          <li><a href="#painting">Painting</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">Thane, Maharashtra</a></li>
+          <li><a href="tel:+91XXXXXXXXXX">+91 XXXXX XXXXX</a></li>
+          <li><a href="mailto:info@bgsinfra.in">info@bgsinfra.in</a></li>
+          <li><a href="#">Mon–Sat: 9AM–7PM</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 BGS Infra. All Rights Reserved.</span>
+      <span>Designed & Built by <a href="#" style="color:var(--sky-light);">Avion IT Services</a></span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/91XXXXXXXXXX?text=Hi%20BGS%20Infra%2C%20I%20would%20like%20to%20enquire%20about%20your%20services."
+   class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:28px;height:28px;fill:#fff;flex-shrink:0;">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
