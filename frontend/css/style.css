@@ -829,3 +829,32 @@ footer { background:#0A1030; padding:70px 0 28px; }
   .contact-form   { padding:28px 20px; }
   .hero-inner     { padding:60px 20px; }
 }
+
+.whatsapp-float {
+  position:fixed;
+  bottom:28px;
+  right:28px;
+  z-index:999;
+  width:56px; height:56px;
+  background:#25D366;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,.4);
+  transition:var(--transition);
+}
+
+.whatsapp-float:hover { transform:scale(1.1); }
+.whatsapp-float::before {
+  content:'';
+  position:absolute;
+  inset:-6px;
+  border-radius:50%;
+  border:2px solid rgba(37,211,102,.5);
+  animation:wa-pulse 2s infinite;
+}
+@keyframes wa-pulse {
+  0%   { transform:scale(1);   opacity:1; }
+  100% { transform:scale(1.5); opacity:0; }
+}
