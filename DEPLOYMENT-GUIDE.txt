@@ -1,0 +1,167 @@
+# BGS Infra Website — Deployment Guide
+# Prepared by Avion IT Services
+# ════════════════════════════════════════════════════
+
+## WHAT YOU HAVE
+- frontend/        → All 5 public pages (HTML + CSS + JS)
+- backend/         → Flask API server (Python)
+- admin/           → Admin panel (HTML — drop inside frontend/)
+
+## STEP 1 — Create Accounts (all free)
+1. github.com          → Create account
+2. supabase.com        → Sign up (use GitHub)
+3. vercel.com          → Sign up (use GitHub)
+4. railway.app         → Sign up (use GitHub)
+5. resend.com          → Sign up (free)
+6. cloudinary.com      → Sign up (free — for project photo uploads)
+
+────────────────────────────────────────────────────
+## STEP 2 — Supabase: Create Database Tables
+────────────────────────────────────────────────────
+1. Go to supabase.com → New Project → name it "bgs-infra"
+2. Choose region: Southeast Asia (Singapore)
+3. Go to SQL Editor and run these queries ONE BY ONE:
+
+-- TABLE 1: enquiries
+CREATE TABLE enquiries (
+  id         SERIAL PRIMARY KEY,
+  name       TEXT NOT NULL,
+  phone      TEXT NOT NULL,
+  email      TEXT,
+  service    TEXT,
+  message    TEXT,
+  status     TEXT DEFAULT 'new',
+  created_at TIMESTAMP DEFAULT NOW()
+);
+
+-- TABLE 2: projects
+CREATE TABLE projects (
+  id           SERIAL PRIMARY KEY,
+  title        TEXT NOT NULL,
+  service_type TEXT,
+  location     TEXT,
+  description  TEXT,
+  image_url    TEXT,
+  year         INTEGER DEFAULT 2025,
+  is_featured  BOOLEAN DEFAULT FALSE
+);
+
+-- TABLE 3: admin_tokens
+CREATE TABLE admin_tokens (
+  token      TEXT PRIMARY KEY,
+  created_at TIMESTAMP DEFAULT NOW()
+);
+
+4. Go to Project Settings → API
+   → Copy "Project URL" → this is your SUPABASE_URL
+   → Copy "anon public" key → this is your SUPABASE_KEY
+
+────────────────────────────────────────────────────
+## STEP 3 — GitHub: Upload Your Code
+────────────────────────────────────────────────────
+1. Install Git: https://git-scm.com/download/win
+2. Open VS Code → Terminal (Ctrl + `)
+3. Run these commands:
+
+   cd Desktop
+   mkdir bgs-infra-website
+   # Copy all files into this folder
+   cd bgs-infra-website
+   git init
+   git add .
+   git commit -m "Initial BGS Infra website"
+
+4. Go to github.com → New Repository → name: bgs-infra-website
+5. Copy the "push existing" commands GitHub shows and run them in VS Code terminal
+
+────────────────────────────────────────────────────
+## STEP 4 — Railway: Deploy Backend
+────────────────────────────────────────────────────
+1. Go to railway.app → New Project → Deploy from GitHub
+2. Select your bgs-infra-website repository
+3. Set Root Directory to: backend
+4. Go to Variables tab → Add these:
+
+   SUPABASE_URL      = (paste from Supabase Step 2)
+   SUPABASE_KEY      = (paste from Supabase Step 2)
+   RESEND_API_KEY    = (get from resend.com → API Keys)
+   NOTIFY_EMAIL      = uncle's email address
+   ADMIN_PASSWORD    = choose a strong password (uncle uses this to login to admin)
+
+5. Railway will deploy automatically
+6. Go to Settings → Domains → copy your Railway URL
+   It looks like: https://bgs-infra-production.up.railway.app
+
+────────────────────────────────────────────────────
+## STEP 5 — Update Frontend with Railway URL
+────────────────────────────────────────────────────
+1. Open frontend/js/main.js in VS Code
+2. Find line: const API_URL = 'https://YOUR-RAILWAY-APP.up.railway.app';
+3. Replace with your actual Railway URL from Step 4
+
+4. Open admin/index.html in VS Code
+5. Find line: const API = 'https://YOUR-RAILWAY-APP.up.railway.app';
+6. Replace with your actual Railway URL
+
+7. Also update WhatsApp number in index.html:
+   Find: href="https://wa.me/91XXXXXXXXXX
+   Replace XXXXXXXXXX with uncle's 10-digit mobile number
+
+8. Update contact details in index.html (address, phone, email)
+   Search for: <!-- ADD ADDRESS --> <!-- ADD PHONE --> <!-- ADD EMAIL -->
+
+9. Save all files
+10. Push to GitHub:
+    git add .
+    git commit -m "Add Railway URL and contact details"
+    git push
+
+────────────────────────────────────────────────────
+## STEP 6 — Vercel: Deploy Frontend
+────────────────────────────────────────────────────
+1. Go to vercel.com → Add New Project
+2. Import your bgs-infra-website GitHub repository
+3. Set Root Directory to: frontend
+4. Click Deploy
+5. Your site is live! URL: https://bgs-infra-website.vercel.app
+
+To add custom domain (bgsinfra.in):
+1. Buy domain from GoDaddy or Namecheap (~₹700/year)
+2. In Vercel → Project Settings → Domains → Add bgsinfra.in
+3. Vercel shows you 2 DNS records to add
+4. Go to your domain registrar → DNS settings → add those 2 records
+5. Wait 10-30 mins → done!
+
+────────────────────────────────────────────────────
+## STEP 7 — Admin Panel
+────────────────────────────────────────────────────
+The admin panel is at: https://bgs-infra-website.vercel.app/admin/
+Password: whatever you set as ADMIN_PASSWORD in Railway
+
+Uncle can:
+- View all enquiries + update status (New → Contacted → Closed)
+- Add new completed projects with photos
+- Search enquiries by name or phone
+
+For project photos: upload to cloudinary.com (free)
+→ Copy the image URL → paste into admin panel when adding project
+
+────────────────────────────────────────────────────
+## IMPORTANT NOTES
+────────────────────────────────────────────────────
+- Never share ADMIN_PASSWORD with anyone except your uncle
+- Never commit the .env file to GitHub (it's in .gitignore already)
+- Railway free credit: $5/month — sufficient for low-traffic site
+  At ~$0.000463/min, $5 = ~180 hours. For always-on: upgrade to $5/month plan.
+- Vercel frontend: completely free forever
+- Supabase database: completely free forever (500MB limit)
+
+────────────────────────────────────────────────────
+## STILL TO BUILD (Next Phase)
+────────────────────────────────────────────────────
+- about.html       (I will send this code next)
+- services.html    (I will send this code next)
+- projects.html    (I will send this code next)
+- contact.html     (I will send this code next)
+
+The homepage (index.html) and admin panel are complete and ready to deploy.
