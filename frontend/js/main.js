@@ -127,7 +127,7 @@ if (contactForm) {
 
     try {
       // ── REPLACE THIS URL WITH YOUR RAILWAY BACKEND URL ──
-      const API_URL = 'https://postgres-production-2329.up.railway.app';
+      const API_URL = 'https://bgs-infra-website-production.up.railway.app';
 
       const res = await fetch(`${API_URL}/api/contact`, {
         method:  'POST',
