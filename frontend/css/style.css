@@ -858,3 +858,55 @@ footer { background:#0A1030; padding:70px 0 28px; }
   0%   { transform:scale(1);   opacity:1; }
   100% { transform:scale(1.5); opacity:0; }
 }
+
+/* ══════════════════════════════════════════════════════════
+   PHASE 2 MOBILE FIXES
+══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* About page — Vision/Mission/Values: 3 cols → 1 col */
+  .section-pad [style*="repeat(3,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* About page — Team: 5 cols → 2 cols */
+  .section-pad [style*="repeat(5,1fr)"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* About + Projects — Stats: 4 cols → 2 cols */
+  .section-pad [style*="repeat(4,1fr)"],
+  section [style*="repeat(4,1fr)"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Contact page — Info cards: 4 cols → 1 col */
+  section [style*="repeat(4,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Contact page — Process steps: 4 cols → 2 cols */
+  .section-pad [style*="repeat(4,1fr)"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Services page — detail grid reverse fix */
+  .service-detail-grid.reverse {
+    direction: ltr !important;
+  }
+
+  /* Founder section grid */
+  [style*="grid-template-columns:340px"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* On very small screens — everything single column */
+  .section-pad [style*="repeat(3,1fr)"],
+  .section-pad [style*="repeat(4,1fr)"],
+  .section-pad [style*="repeat(5,1fr)"],
+  section [style*="repeat(4,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+}
